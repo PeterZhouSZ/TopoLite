@@ -58,12 +58,12 @@ endfunction()
 ## IPOPT
 function(topolite_download_ipopt)
     topolite_download_project(ipopt
-            GIT_REPOSITORY https://github.com/robin-forks/COIN-OR_Ipopt
-            GIT_TAG        v1.2.0
+            GIT_REPOSITORY https://github.com/rjodon/coinor-ipopt-with-cmake.git
+            GIT_TAG        3.13.0_cmake1.2
             )
 endfunction()
 
-## COIN-OR LP
+# COIN-OR LP - NOT USED FOR NOW
 function(topolite_download_coinor_lp)
     topolite_download_project(coinor_lp
             GIT_REPOSITORY https://github.com/robin-forks/COIN-OR_suite_cmake_compatible.git

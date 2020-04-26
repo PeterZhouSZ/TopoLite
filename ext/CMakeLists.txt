@@ -44,13 +44,24 @@ endif()
 set(TBB_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/tbb/include)
 
 # CLP
-set(CLP_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/clp/Clp/src
+set(CLP_INCLUDE_DIR
+        ${CMAKE_CURRENT_SOURCE_DIR}/clp/Clp/src
         ${CMAKE_CURRENT_SOURCE_DIR}/clp/Clp/src/OsiClp
         ${CMAKE_CURRENT_SOURCE_DIR}/clp/ext/CoinUtils/src
-        ${CMAKE_CURRENT_SOURCE_DIR}/clp/ext/Osi/src/Osi)
+        ${CMAKE_CURRENT_SOURCE_DIR}/clp/ext/Osi/src/Osi
+        )
 
 ## IPOPT
-find_package(IPOPT REQUIRED)
+set(IPOPT_INCLUDE_DIRS
+        ${CMAKE_CURRENT_SOURCE_DIR}/ipot/src/Algorithm
+        ${CMAKE_CURRENT_SOURCE_DIR}/ipot/src/Algorithm/LinearSolvers
+        ${CMAKE_CURRENT_SOURCE_DIR}/ipot/src/Common
+        ${CMAKE_CURRENT_SOURCE_DIR}/ipot/src/contrib/CGPenalty
+        ${CMAKE_CURRENT_SOURCE_DIR}/ipot/src/contrib/LinearSolverLoader
+        ${CMAKE_CURRENT_SOURCE_DIR}/ipot/src/Interfaces
+        ${CMAKE_CURRENT_SOURCE_DIR}/ipot/src/LinAlg
+        ${CMAKE_CURRENT_SOURCE_DIR}/ipot/src/LinAlg/TMatrices
+        )
 
 ## Pybind11
 
@@ -77,7 +88,8 @@ set(ext_include ${CPPSUBPROCESS_INCLUDE_DIR}
                 ${CLP_INCLUDE_DIR}
                 ${IPOPT_INCLUDE_DIRS}           # defined in findIPOPT.cmake
                  PARENT_SCOPE)
-
+message("TBB ${TBB_INCLUDE_DIR}")
+message("IPOPT ${IPOPT_INCLUDE_DIRS}")
 set(ext_lib pugixml
             QuickHull
             Clipper
@@ -88,6 +100,7 @@ set(ext_lib pugixml
             lib_Osi
             lib_Clp
             lib_CoinUtils
-            ${IPOPT_LIBRARIES}                  # defined in findIPOPT.cmake
+            libipopt_ext
+            #${IPOPT_LIBRARIES}                  # defined in findIPOPT.cmake
             ${Boost_LIBRARIES}
             PARENT_SCOPE)
