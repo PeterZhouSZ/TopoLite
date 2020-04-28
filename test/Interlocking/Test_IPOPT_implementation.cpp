@@ -8,7 +8,7 @@
 #include <iostream>
 
 #define HAVE_CSTDDEF
-#include <IpIpoptApplication.hpp>
+#include "IpIpoptApplication.hpp"
 #undef HAVE_CSTDDEF
 
 #include "ipopt_problems.h"

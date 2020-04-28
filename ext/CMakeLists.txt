@@ -100,7 +100,7 @@ set(ext_lib pugixml
             lib_Osi
             lib_Clp
             lib_CoinUtils
-            libipopt_ext
+            lib_Ipopt_ext
             #${IPOPT_LIBRARIES}                  # defined in findIPOPT.cmake
             ${Boost_LIBRARIES}
             PARENT_SCOPE)

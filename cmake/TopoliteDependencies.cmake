@@ -12,39 +12,39 @@ include(TopoliteDownloadExternal)
 
 # Eigen
 if(NOT TARGET Eigen3::Eigen)
-    topolite_download_eigen()
+#    topolite_download_eigen()
 endif()
 
 # Catch2
 if(NOT TARGET catch2::catch2)
-    topolite_download_catch()
+#    topolite_download_catch()
     add_subdirectory(${TOPOLITE_EXTERNAL}/catch2)
     list(APPEND CMAKE_MODULE_PATH ${TOPOLITE_EXTERNAL}/catch2/contrib)
 endif()
 
 # libigl
 if(NOT TARGET igl::core)
-    topolite_download_libigl()
+#    topolite_download_libigl()
 endif()
 
 # shapeop
 if(NOT TARGET ShapeOp)
-    topolite_download_shapeop()
+#    topolite_download_shapeop()
 endif()
 
 # pugixml
 if(NOT TARGET pugixml)
-    topolite_download_pugixml()
+#    topolite_download_pugixml()
 endif()
 
 # pybind11
 if(NOT TARGET pybind11::pybind11 AND HAVE_PYBIND)
-    topolite_download_pybind11()
+#    topolite_download_pybind11()
 endif()
 
 # nanogui
 if(NOT TARGET nanogui AND HAVE_NANOGUI)
-    topolite_download_nanogui()
+#    topolite_download_nanogui()
 endif()
 
 # TBB library
@@ -73,7 +73,7 @@ if(NOT TARGET lib_Clp)
 endif()
 
 # coin-or ipopt
-if(NOT TARGET ipoptfort)
-    topolite_download_Ipopt()
-    add_subdirectory(${TOPOLITE_EXTERNAL}/ipopt)
-endif()
+#if(NOT TARGET ipoptfort)
+#    topolite_download_Ipopt()
+add_subdirectory(${TOPOLITE_EXTERNAL}/ipopt)
+#endif()

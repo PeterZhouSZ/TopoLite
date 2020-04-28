@@ -6,7 +6,7 @@
 #define TOPOLITE_IPOPT_PROBLEM_H
 
 #define HAVE_CSTDDEF
-#include <IpTNLP.hpp>
+#include <lib_Ipopt_ext/IpTNLP>
 #undef HAVE_CSTDDEF
 
 using namespace Ipopt;
